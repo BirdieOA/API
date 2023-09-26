@@ -1,0 +1,19 @@
+{
+  "name": "hpl",
+  "version": "1.0.0",
+  "description": "creacion de api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "api"
+  },
+  "keywords": [
+    "api",
+    "nodejs"
+  ],
+  "author": "birdie",
+  "license": "ISC"
+}
