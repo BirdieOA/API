@@ -88,9 +88,40 @@ const deleteUser = (req, res) => {
   });
 }
 
+const updateUser = (req, res) => {
+  const { id } = req.params;
+  
+  //find user
+ const userIndex = MIS_USERS.findIndex(user => user.id === id);
+
+  //validate user exists
+  if (userIndex === -1) {
+    return res.status(404).json({
+      status: 'fallo ☠️',
+      message: 'Usuario no encontrado, escriba un id correcto 👇'
+    })
+  }
+
+  //Update User
+  MIS_USERS[userIndex] = {
+    ...MIS_USERS[userIndex],
+    ...req.body
+  }
+
+  // send response
+  res.status(200).json({
+    status: 'success',
+    data: {
+      user: MIS_USERS[userIndex],
+    }
+   })
+}
+
+
 module.exports = {
   getAllUsers,
   getUsersById,
   saveUser,
-  deleteUser
+  deleteUser,
+  updateUser,
 }
